@@ -1,10 +1,9 @@
 #!/bin/bash
-# new Env('BBK-穿行记膨胀助力');
+# new Env('BBK-20E卡助力');
 # export JD_LOG_XYZ_TOKEN="从机器人获取的token"
 # export Proxy_Url="代理网址 例如：星空、熊猫 生成选择txt 一次一个"
-# export CXJ_HELP_PZ_PINS="jd_xxx&jd_xxx" # 指定pin助力，多个用英文&分割
-# export CXJ_HELP_PZ_DEALY="2" #助力等待2秒,可选参数,可以不填,默认0秒
-# 支持CXJ_HELP_PZ_PINS 或者 链接方式(`cxj_pz_list.txt`存放需要助力的URL,一行一个)
+# export ECARD20_DELAY="2" #每个ck助力后等待2秒
+# 需要20ek_list.txt，一行一个助力链接
 pwd
 _ftype=""
 get_arch=`arch`
@@ -30,7 +29,7 @@ else
     if [ -f "$PWD/BBK/$_ftype.bbk" ]; then
         echo "$PWD/BBK/$_ftype.bbk"
         eval "chmod +x ./BBK/$_ftype.bbk"
-        eval "./BBK/$_ftype.bbk -t cxj_help_pz"
+        eval "./BBK/$_ftype.bbk -t 20ek_help"
     else
         if [ ! -f "$PWD/$_ftype.bbk" ]; then
             echo "在$PWD/BBK目录、$PWD目录下均未找到文件$_ftype.bbk"
@@ -38,6 +37,6 @@ else
         fi
         echo "$PWD/$_ftype.bbk"
         eval "chmod +x $PWD/$_ftype.bbk"
-        eval "$PWD/$_ftype.bbk -t cxj_help_pz"
+        eval "$PWD/$_ftype.bbk -t 20ek_help"
     fi
 fi
